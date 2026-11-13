@@ -6,8 +6,6 @@ and the project follows [Semantic Versioning](https://semver.org/).
 
 Each released version has its own folder in this repository (`Ver0.2.0/`, `Ver0.1.3/`, …).
 
-## [Unreleased]
-
 ## [0.2.0] - 2026-11-13
 
 ### Added
