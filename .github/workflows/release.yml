@@ -1,0 +1,38 @@
+name: Release
+
+# Push a tag like v0.2.0: the workflow builds the matching Ver0.2.0 folder
+# and publishes a GitHub Release with a debug-signed APK.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.7
+
+      - name: Build debug APK
+        run: |
+          VER_DIR="Ver${GITHUB_REF_NAME#v}"
+          test -d "$VER_DIR" || { echo "Folder $VER_DIR not found for tag $GITHUB_REF_NAME"; exit 1; }
+          (cd "$VER_DIR" && gradle assembleDebug --stacktrace)
+          cp "$VER_DIR/app/build/outputs/apk/debug/app-debug.apk" "ButterMusicPlayer-${GITHUB_REF_NAME}.apk"
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ButterMusicPlayer-*.apk
+          generate_release_notes: true

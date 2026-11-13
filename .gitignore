@@ -1,0 +1,33 @@
+# Gradle / build
+.gradle/
+build/
+**/app/build/
+**/captures/
+.externalNativeBuild/
+.cxx/
+
+# Android Studio / IDEs
+*.iml
+.idea/
+**/local.properties
+.vscode/
+
+# Signing & secrets — never commit these
+*.jks
+*.keystore
+keystore.properties
+google-services.json
+
+# Packages
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python (tools/)
+__pycache__/
+*.pyc
