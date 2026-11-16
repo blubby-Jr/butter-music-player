@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="Ver0.2.0/tools/icon_preview.png" width="128" alt="Butter Music Player icon">
+<img src="Ver0.2.1/tools/icon_preview.png" width="128" alt="Butter Music Player icon">
 
 # Butter Music Player
 
@@ -10,7 +10,7 @@
 
 ![Platform](https://img.shields.io/badge/platform-Android%208.0%2B-3DDC84?logo=android&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-1.9-7F52FF?logo=kotlin&logoColor=white)
-![Version](https://img.shields.io/badge/version-0.2.0-orange)
+![Version](https://img.shields.io/badge/version-0.2.1-orange)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 </div>
@@ -24,7 +24,9 @@
 - **Playlists**: create (＋), rename / delete (long-press a tab), add tracks (long-press a track), search.
 - **Add music** button inside a playlist: pick **several files** or a **whole folder** (subfolders included).
 - **`<AutoName>`**: the default name of a new playlist. Add a folder to it and the playlist is renamed after that folder.
-- **Disable tracks** like in AIMP: a disabled track (☐) stays in the playlist but is skipped during playback.
+- **Enable / disable tracks** with a checkbox on the left (like in AIMP): unchecked tracks stay in the playlist but are skipped during playback.
+- **Reorder tracks** by dragging the ≡ handle next to the checkbox.
+- **Next playlist** (Settings): when a playlist ends, playback continues with the next one.
 - **Import playlists** from Spotify (Exportify CSV), SoundCloud export, Google Takeout (YouTube Music), plain `Artist - Title` TXT or JSON — matched against the music on your device. Missing tracks are listed, and tapping one opens a search in Spotify / SoundCloud / YouTube Music.
 
 ### Tag editor
@@ -44,9 +46,10 @@
 - Per-track settings are stored as JSON.
 
 ### Visualizers
-Bars · oscilloscope · analog VU meters · custom lines (count, thickness, colour, gradient, rainbow, mirror, peaks, rounding). Tap the visualizer for cover art, long-press for the next mode.
+Bars · oscilloscope · analog VU meters · custom lines (count, thickness, colour, gradient, rainbow, mirror, peaks, rounding). Smoothness is adjustable in Settings. Tap the visualizer for cover art, long-press for the next mode.
 
 ### Everything else
+- Clean main screen: Editor, Effects, EQ, Import and Settings live in the **☰ menu** at the top left.
 - Themes: dark, light, AMOLED, custom colours. Languages: English, Українська, Русский (or follow the device).
 - Audio focus (pause on calls, ducking), pause when headphones are unplugged, notification with controls, `MediaSession` (headset buttons).
 - Restores the last track and position on launch.
@@ -60,7 +63,8 @@ Bars · oscilloscope · analog VU meters · custom lines (count, thickness, colo
 
 ```
 BMS/
-├── Ver0.2.0/        ← current version (Android Studio project)
+├── Ver0.2.1/        ← current version (Android Studio project)
+├── Ver0.2.0/        ← archived version
 ├── Ver0.1.3/        ← archived version
 ├── Ver0.1.2/        ← archived version
 ├── Ver0.1.1/        ← archived version
@@ -72,7 +76,7 @@ BMS/
 └── README.md
 ```
 
-Each `VerX.Y.Z` folder is a self-contained project: open **that** folder in Android Studio. Source files are in `Ver0.2.0/app/src/main/java/com/example/aimpmobile/`.
+Each `VerX.Y.Z` folder is a self-contained project: open **that** folder in Android Studio. Source files are in `Ver0.2.1/app/src/main/java/com/example/aimpmobile/`.
 
 ## Build
 
@@ -82,14 +86,14 @@ Requirements: Android Studio Koala (2024.1) or newer, JDK 17, Android SDK 34.
 git clone https://github.com/blubby-Jr/butter-music-player.git
 ```
 
-1. Open the `Ver0.2.0` folder in Android Studio (**File ▸ Open**) and wait for Gradle sync.
+1. Open the `Ver0.2.1` folder in Android Studio (**File ▸ Open**) and wait for Gradle sync.
 2. Run on a device (Android 8.0+, USB debugging) or an emulator.
 3. APK: **Build ▸ Build APK(s)** → `app/build/outputs/apk/debug/`.
 
 Command line (Gradle 8.7):
 
 ```bash
-cd Ver0.2.0
+cd Ver0.2.1
 gradle assembleDebug
 ```
 
@@ -109,7 +113,7 @@ gradle assembleDebug
 | `ImportParser.kt` | Playlist import parsers |
 | `Views.kt`, `MainActivity.kt`, `Theme.kt`, `S.kt`, `AppSettings.kt` | UI, theming, localisation, settings |
 | `PlaybackService.kt` | Foreground service, notification, `MediaSession` |
-| `tools/generate_icon.py` (in `Ver0.2.0/`) | Procedural icon generator (`python3 tools/generate_icon.py [seed]`, needs Pillow) |
+| `tools/generate_icon.py` (in `Ver0.2.1/`) | Procedural icon generator (`python3 tools/generate_icon.py [seed]`, needs Pillow) |
 
 ## Not planned
 

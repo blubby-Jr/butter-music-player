@@ -15,9 +15,9 @@ Please do **not** attach copyrighted music files; a description of the format an
 ## Development setup
 
 1. Install Android Studio Koala (2024.1) or newer, JDK 17 and Android SDK 34.
-2. Open the latest `VerX.Y.Z` folder (currently `Ver0.2.0`) and let Gradle sync.
+2. Open the latest `VerX.Y.Z` folder (currently `Ver0.2.1`) and let Gradle sync.
 3. Run on a device or emulator (Android 8.0+).
-4. Command line: `cd Ver0.2.0 && gradle assembleDebug` (Gradle 8.7).
+4. Command line: `cd Ver0.2.1 && gradle assembleDebug` (Gradle 8.7).
 
 ## Code style
 

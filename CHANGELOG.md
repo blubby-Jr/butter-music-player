@@ -6,6 +6,24 @@ and the project follows [Semantic Versioning](https://semver.org/).
 
 Each released version has its own folder in this repository (`Ver0.2.0/`, `Ver0.1.3/`, …).
 
+## [Unreleased]
+
+## [0.2.1] - 2026-11-16
+
+### Added
+- **Next playlist** switch in Settings: when a playlist finishes, playback automatically continues with the next playlist (after the last one — the first). It does not apply to "All music" or track repeat.
+- **Visualizer smoothness** setting. Bars and VU meters now use time-based smoothing (separate rise and fall) that does not depend on the refresh rate, plus light smoothing between neighbouring bars.
+- **Reordering tracks** in playlists: drag the ≡ handle next to the checkbox.
+
+### Changed
+- **Cleaner interface**: Editor, Effects, EQ, Import and Settings moved into a drop-down **☰ menu** at the top left; the visualizer now uses the full width of the main screen.
+- **Enabling / disabling tracks redone**: a checkbox on the left of each track (like in AIMP) replaces the "Disable in this playlist" menu item and the ☐ mark. Changes apply to the playing queue immediately.
+- The app name shown inside the app (title bar, notification fallback title, About) is now **Butter Music Player**.
+- `versionName` set to `0.2.1`, `versionCode` to `3`.
+
+### Removed
+- The "Fall-off (smoothing)" visualizer setting, replaced by "Visualizer smoothness".
+
 ## [0.2.0] - 2026-11-13
 
 ### Added
@@ -76,7 +94,8 @@ No changes are recorded: the README of this version is identical to 0.1.1.
 - The UI position runs ahead of the sound by roughly one buffer length (~150 ms).
 - No notification / lock screen controls (`MediaSession`) yet.
 
-[Unreleased]: https://github.com/blubby-Jr/butter-music-player/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/blubby-Jr/butter-music-player/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/blubby-Jr/butter-music-player/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/blubby-Jr/butter-music-player/compare/v0.1.3...v0.2.0
 [0.1.3]: https://github.com/blubby-Jr/butter-music-player/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/blubby-Jr/butter-music-player/compare/v0.1.1...v0.1.2

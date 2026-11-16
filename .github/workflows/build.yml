@@ -7,7 +7,7 @@ on:
 
 env:
   # Update when a new VerX.Y.Z project folder becomes the current one.
-  PROJECT_DIR: Ver0.2.0
+  PROJECT_DIR: Ver0.2.1
 
 jobs:
   assemble:

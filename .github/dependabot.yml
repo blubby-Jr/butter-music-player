@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: gradle
-    directory: "/Ver0.2.0"
+    directory: "/Ver0.2.1"
     schedule:
       interval: monthly
   - package-ecosystem: github-actions
